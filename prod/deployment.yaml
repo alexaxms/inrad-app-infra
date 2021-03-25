@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: inrad
+  name: inrad-app
+  labels:
+    app: inrad-app
+spec:
+  selector:
+    matchLabels:
+      app: inrad-app
+      tier: frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: inrad-app
+        tier: frontend
+    spec:
+      containers:
+        - image: alexaxms/inrad-app:a55eaf0 
+          name: inrad-app
+          ports:
+            - containerPort: 80
+              name: inrad-app
+          imagePullPolicy: Always
