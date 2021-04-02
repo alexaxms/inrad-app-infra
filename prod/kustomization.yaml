@@ -7,4 +7,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
 - name: alexaxms/inrad-app
-  newTag: 691c5e5
+  newTag: 2f59a22
